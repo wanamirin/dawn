@@ -350,6 +350,11 @@
   display: none;
 }
 
+#recover,
+#login {
+  scroll-margin-top: 20rem;
+}
+
 .activate button[name='decline'],
 .addresses li > button,
 .addresses form button[type] {
