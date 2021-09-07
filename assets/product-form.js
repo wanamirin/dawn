@@ -16,6 +16,7 @@ if (!customElements.get('product-form')) {
 
       submitButton.setAttribute('disabled', true);
       submitButton.classList.add('loading');
+      this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
 
       const body = JSON.stringify({
         ...JSON.parse(serializeForm(this.form)),
@@ -33,6 +34,7 @@ if (!customElements.get('product-form')) {
         })
         .finally(() => {
           submitButton.classList.remove('loading');
+          this.querySelector('.loading-overlay__spinner').classList.add('hidden');
           submitButton.removeAttribute('disabled');
         });
     }
